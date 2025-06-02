@@ -1,67 +1,74 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Source Sans 3", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+html {
+    font-size: 62.5%;
 }
 
 header {
     background-color: #00775F;
-    box-shadow: 0 5px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     position: fixed;
     z-index: 999;
     width: 100%;
+    padding-top: 1rem;
 }
 
-/*--------- topo ---------------*/
-
-.topo .box-redes-sociais{
-    display: flex;
-    background: transparent;
-    justify-content: flex-end;
-    gap: 16px;
-    padding: 10px 20px;
+.topo {
+    display: none;
 }
 
-.topo .box-redes-sociais a{
-    text-decoration: none;
-    color: #000;
-    font-size: 20px;
-}
-
-.topo .box-redes-sociais li{
-    list-style: none;
-}
-
-.header{
+.header-content {
     display: flex;
     padding: 10px 0;
+    justify-content: space-between;
+    align-items: center;
 }
 
-header .img-logo{
+
+/*----------------- logo --------------*/
+
+.header-content .img-logo {
+    margin-left: 40px;
+}
+
+.header-content .start-header .img-logo img {
+    width: 30px;
+}
+
+.start-header {
     display: flex;
-    gap: 15px;
-    padding: 0 20px;
-}
-
-header .img-logo #logo_imrea{
-    width: 40%;
-    
-}
-
-header .img-logo #logo_hc{
-    width: 16%;
+    align-items: center;
+    gap: 40px;
 }
 
 /*---------- menu mobile ---------------*/
 
-.btn-abrir-menu .icon{
-    color: #fff;
-    font-size: 32px;
-    display: block;
+.menu {
+    display: none;
 }
 
-.menu-mobile{
-    background: #E44D1F;
+.btn-abrir-menu .icon {
+    color: #fff;
+    font-size: 4rem;
+    display: block;
+    margin: 0 20px;
+}
+
+.btn-abrir-menu .icon:focus {
+    outline: 2.5px solid #000;
+}
+
+.menu-mobile {
+    background: #00775F;
     height: 100%;
     position: fixed;
     top: 0;
@@ -72,46 +79,52 @@ header .img-logo #logo_hc{
     transition: .5s;
     display: block;
 }
-.menu-mobile.abir-menu{
+
+.menu-mobile.abir-menu {
     width: 50%;
 }
 
-.menu-mobile.abir-menu ~ .overlay-menu{
+.menu-mobile.abir-menu~.overlay-menu {
     display: block;
 }
-.menu-mobile .btn-fechar .icon{
+
+.menu-mobile .btn-fechar .icon {
     color: white;
-    font-size: 30px;
+    font-size: 3rem;
     display: block;
 }
-.menu-mobile .btn-fechar{
+
+.menu-mobile .btn-fechar {
     padding: 20px 5%;
 }
 
-.menu-mobile nav ul{
+.menu-mobile nav ul {
     text-align: right;
     list-style-type: none;
     text-decoration: none;
 }
 
-.menu-mobile nav ul li a{
+.menu-mobile nav ul #active {
+    background-color: white;
+    color: #00775F;
+}
+
+.menu-mobile nav ul li a {
     color: white;
-    font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 20px;
+    font-size: 2rem;
     padding: 20px 8%;
     gap: 70px;
     display: block;
     text-decoration: none;
 }
-.menu-mobile nav ul li a:hover{
+
+.menu-mobile nav ul li a:hover {
     background-color: white;
-    color: #E44D1F;
+    color: #00775F;
 }
 
-.overlay-menu{
+.overlay-menu {
     background-color: #0000009c;
     width: 100%;
     height: 100%;
@@ -120,4 +133,163 @@ header .img-logo #logo_hc{
     left: 0;
     z-index: 9999999;
     display: none;
+}
+
+.header-content .input-wrapper {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 24px;
+    background-color: rgba(239, 148, 121, 0.20);
+    max-width: 200px;
+}
+
+.header-content .input-wrapper input {
+    font-size: 1.6rem;
+    color: #2C2C2C;
+    background-color: transparent;
+    border: none;
+    width: 90%;
+}
+
+.header-content .input-wrapper button {
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.header-content .container-search button img {
+    width: 20px;
+    height: 20px;
+}
+
+.overlay-menu {
+    background-color: #0000009c;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999999;
+    display: none;
+}
+
+
+
+
+
+/*----------------- media queries 600px ---------------*/
+
+@media (min-width: 600px) {}
+
+/*----------------- media queries 768px ---------------*/
+
+@media (min-width: 768px) {
+    .topo {
+        display: block;
+    }
+
+    .topo .box-redes-sociais {
+        display: flex;
+        background: transparent;
+        justify-content: flex-end;
+        gap: 16px;
+        padding: 0 20px;
+        padding-top: 8px;
+    }
+
+    .topo .box-redes-sociais a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 2rem;
+        overflow: hidden;
+    }
+
+    .topo .box-redes-sociais li {
+        list-style: none;
+    }
+
+
+    header {
+        padding: 5px 4%;
+    }
+
+    .menu-mobile {
+        display: none;
+    }
+
+    /*------------ menu desktop ----------------*/
+
+    .btn-abrir-menu {
+        display: none;
+    }
+
+    .menu {
+        display: flex;
+    }
+
+    .menu ul {
+        display: flex;
+        justify-content: center;
+        gap: 24px;
+    }
+
+    .menu #active {
+        text-decoration: underline;
+        text-underline-offset: 8px;/* padrão */
+        transition: text-underline-offset 0.3s ease;
+    }
+
+    .menu ul li {
+        list-style: none;
+    }
+
+    .menu ul li a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 1.8rem;
+        padding: 16px 0;
+    }
+
+    .menu ul li a:hover {
+        text-decoration: underline;
+        text-underline-offset: 8px;/* padrão */
+        transition: text-underline-offset 0.3s ease;
+    }
+
+    .menu ul li a:focus {
+        border: 2.5px solid #000;
+    }
+
+    .header-content input {
+        margin: 0 8px;
+        width: 150px;
+    }
+
+    /*------------- fim menu desktop ---------------*/
+}
+
+
+
+/*----------------- media queries 992px ---------------*/
+
+@media (min-width: 992px) {
+    .header-content {
+        justify-content: space-between;
+    }
+
+    
+
+}
+
+
+/*----------------- media queries 1300px ---------------*/
+@media (min-width: 1300px) {
+    .menu ul {
+        gap: 24px;
+    }
 }
